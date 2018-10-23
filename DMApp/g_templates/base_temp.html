@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta-charset="utf-18">
+        <title>Victim List</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1><a href="{% url 'managing:list' %}">#..LOGO..#</a></h1>
+            <div class="nav">
+                {% if user.is_authenticated %}
+                <ul>
+                    <li>
+                        <form class="logout-view" action="{% url 'accounts:logout' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" value="Log Out">
+                        </form>
+                    </li>
+                    <a href="{% url 'managing:enter' %}">Enter New Victim Details</a>
+                </ul>
+                {% else %}
+                <a href="{% url 'accounts:login' %}">LogIn</a>
+                <a href="{% url 'accounts:signup' %}">SignUp</a>
+                {% endif %}
+            </div>
+        </header>        
+        <div class="wrap">
+            {% block one %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

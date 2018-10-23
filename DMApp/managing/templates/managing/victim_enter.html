@@ -1,0 +1,12 @@
+{% extends 'base_temp.html' %}
+
+{% block one %}
+    <div class="enter_victim">
+        <h1>Enter the details of the victim:</h1>
+        <form class="enter_victim_form" action="{% url 'managing:enter' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Save Victim Details">
+        </form>
+    </div>
+{% endblock %}

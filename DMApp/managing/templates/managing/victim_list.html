@@ -1,0 +1,17 @@
+{% extends 'base_temp.html' %}
+
+{% block one %}
+    <h1>The following is the list of all the victims:</h1>
+    <div class="victims">
+		{% for victim in victims %}
+			<img src="{{ victim.thumb.url }}">
+			<h4>Name: {{ victim.name }}<br>
+				Age: {{ victim.age }}	Gender: {{ victim.gender }}<br>
+				Status: {{ victim.status }}
+				Present In: {{ victim.admitter }}
+			</h4>
+            <p>Entered On: {{ victim.date }}</p>
+            
+        {% endfor %}
+    </div>
+{% endblock %}
