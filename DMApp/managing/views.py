@@ -16,7 +16,7 @@ def victim_new(request):
         form = forms.VictimForm(request.POST, request.FILES)
         if form.is_valid():
             s_instance = form.save(commit=False)
-            s_instance.h_name = request.user
+            s_instance.admitter = request.user
             s_instance.save()
             return redirect('managing:list')
     else:

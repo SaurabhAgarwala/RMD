@@ -7,10 +7,11 @@
 			<img src="{{ victim.thumb.url }}">
 			<h4>Name: {{ victim.name }}<br>
 				Age: {{ victim.age }}	Gender: {{ victim.gender }}<br>
-				Status: {{ victim.status }}
+				Status: {{ victim.status }}<br>
 				Present In: {{ victim.admitter }}
+				Address: {{ victim.hospital_address }}
 			</h4>
-            <p>Entered On: {{ victim.date }}</p>
+            <p>Entry Made On: {{ victim.date }}</p>
             
         {% endfor %}
     </div>
