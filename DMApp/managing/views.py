@@ -3,12 +3,19 @@ from .models import Victim
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from . import forms
+import json
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
 def victim_list(request):
     victims = Victim.objects.all().order_by('date')
     return render(request, 'managing/victim_list.html', {'victims':victims})
+
+def app_victimlist(request):
+    victims = Victim.objects.all().order_by('date')
+    return json.dumps(victims)
 
 @login_required(login_url="/accounts/login/")
 def victim_new(request):

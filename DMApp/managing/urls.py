@@ -5,5 +5,6 @@ app_name = 'managing'
 
 urlpatterns = [
     url(r'^$', views.victim_list, name="list"),
-    url(r'^enter/$', views.victim_new, name="enter")
+    url(r'^enter/$', views.victim_new, name="enter"),
+    url(r'^applist/$', views.app_victimlist, name="applist")
 ]

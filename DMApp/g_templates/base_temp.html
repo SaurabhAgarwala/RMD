@@ -22,8 +22,8 @@
                     <a href="{% url 'managing:enter' %}">Enter New Victim Details</a>
                 </ul>
                 {% else %}
-                <a href="{% url 'accounts:login' %}">LogIn</a>
-                <a href="{% url 'accounts:signup' %}">SignUp</a>
+                <a href="{% url 'accounts:login' %}">LogIn</a><br>
+                <a href="{% url 'accounts:signup' %}">SignUp</a><em>(If you are a member of a hospital/relief camp helping in managing this disaster)</em>
                 {% endif %}
             </div>
         </header>        
