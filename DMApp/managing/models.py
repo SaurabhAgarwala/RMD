@@ -24,6 +24,7 @@ class Victim(models.Model):
     thumb = models.ImageField(default='default.jpg')
     hospital_address = models.TextField(default='Add Hospital/Relief Camp Address', blank=False)
     admitter = models.ForeignKey(User, default=1, blank=False, on_delete=models.CASCADE)
+    img_path = models.CharField(max_length=50, default='default.jpg')
 
     def __str__(self):
-        return self.name
+        return '{ name:' + self.name + ',age:' + str(self.age) + ',gender:'+self.gender + ',status:'+self.status + ',location:' + self.hospital_address + ',admitter:'+ str(self.admitter) +',image:'+self.thumb.url + '}'
