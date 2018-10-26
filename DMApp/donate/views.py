@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from . import forms
 
 
 # Create your views here.
@@ -16,9 +17,19 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 def challan(request):
-    template = loader.get_template('donate/challan.html')
-    context = {}
-    return HttpResponse(template.render(context, request))
+    if request.method == 'POST':
+        nm = request.POST.get('name')
+        amt = request.POST.get('amount')
+        dt = request.POST.get('date')
+        context = {
+            'name':nm,
+            'amount':amt,
+            'date':dt
+        }
+        #return render(request, 'donate/challan.html', {'context':context})
+    else:
+        form = forms.DonorForm
+        return render(request, 'donate/challan.html', {'form':form})
 
 def help(request):
     template = loader.get_template('donate/help.html')
@@ -34,4 +45,3 @@ def about(request):
     template = loader.get_template('donate/about.html')
     context = {}
     return HttpResponse(template.render(context, request))
-
