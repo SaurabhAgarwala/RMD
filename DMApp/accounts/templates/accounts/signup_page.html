@@ -1,7 +1,7 @@
 {% extends 'base_temp.html' %}
 
 {% block one %}
-    <h1>SignUp Page</h1>
+    <h1 id="detailhead">Sign Up </h1>
     <form class="signup_form" action="{% url 'accounts:signup' %}" method="post">
         {% csrf_token %}
         {{ form }}

@@ -4,7 +4,7 @@
 	<form action="{% url 'managing:list' %}" class="ws-validate" method="POST">
 		{% csrf_token %}                       
 	<div class="form-row">
-		<p style="display:inline-block">Enter the name of the person who you want to search for:</p>
+		<p id="detailp" style="display:inline-block">Search: </p>
 		<input type="text" class="hide-replaced" name="name"/>
 	</div>
 	<br>
@@ -13,21 +13,21 @@
 	</div>
 	</form>
 	<br>
-	{% if victims %}
-	<h1>The following is the list of all the victims:</h1>
-    <div class="victims">
+	{% if victims %}<center>
+	<h1 id="detailhead">Victim List</h1>
+    <div class="row" style="align-self:center;width: 100%">
 		{% for victim in victims %}
-			<img src="{{ victim.thumb.url }}">
+		<div class="col-lg-4" style="color:rgb(0, 0, 0); background-color:rgb(255, 255, 255)">
+			<img src="{{ victim.thumb.url }}" style="max-width:25vh; max-height: 20vh">
 			<h4>Name: {{ victim.name }}<br>
-				Age: {{ victim.age }}	Gender: {{ victim.gender }}<br>
+				Age: {{ victim.age }}	<br>Gender: {{ victim.gender }}<br>
 				Status: {{ victim.status }}<br>
-				Present In: {{ victim.admitter }}
+				Present In: {{ victim.admitter }} <br>
 				Address: {{ victim.hospital_address }}
 			</h4>
-            <p>Entry Made On: {{ victim.date }}</p>
-            
+            <p>Entry Made On: {{ victim.date }}</p></div>
         {% endfor %}
-	</div>
+    </div></center>
 	{% else %}
 	<h3>Sorry no entered parameters doesn't match any of the entries.</h3>
 	{% endif %}
