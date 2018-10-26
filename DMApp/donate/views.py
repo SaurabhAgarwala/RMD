@@ -5,9 +5,11 @@ from . import forms
 
 from django.views.generic import View
 from django.utils import timezone
-from .models import *
 from .render import Render
+from datetime import datetime
+import re
 
+text = ''
 # Create your views here.
 
 def donate(request):
@@ -25,6 +27,7 @@ def challan(request):
         nm = request.POST.get('name')
         amt = request.POST.get('amount')
         dt = request.POST.get('date')
+        
         context = {
             'name':nm,
             'amount':amt,

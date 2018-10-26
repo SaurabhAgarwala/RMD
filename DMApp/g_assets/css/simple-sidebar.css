@@ -88,12 +88,12 @@ body {
 
 
 #details{
-  color: rgb(209, 209, 209);
+  color: rgb(68, 68, 68);
   display: block;
 }
 
 #details:hover{
-  color: #fff;
+  color: rgb(0, 0, 0);
   transition: all 0.5s ease-in-out;
 }
 
