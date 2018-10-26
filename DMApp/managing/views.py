@@ -12,7 +12,7 @@ def victim_list(request):
 
 def app_victimlist(request):
     strng = ','.join([str(i) for i in Victim.objects.all().order_by('date').defer('thumb','date')])
-    return HttpResponse(strng)
+    return HttpResponse('[' + strng + ']')
 
 @login_required(login_url="/accounts/login/")
 def victim_new(request):

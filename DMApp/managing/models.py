@@ -27,4 +27,4 @@ class Victim(models.Model):
     img_path = models.CharField(max_length=50, default='default.jpg')
 
     def __str__(self):
-        return '{ name:' + self.name + ',age:' + str(self.age) + ',gender:'+self.gender + ',status:'+self.status + ',location:' + self.hospital_address + ',admitter:'+ str(self.admitter) +',image:'+self.thumb.url + '}'
+        return '{ name:"' + self.name + '",age:"' + str(self.age) + '",gender:"'+self.gender + '",status:"'+self.status + '",location:"' + self.hospital_address + '",admitter:"'+ str(self.admitter) +'",image:"'+self.thumb.url + '"}'
