@@ -2,13 +2,16 @@
 
 {% block one %}
     <h1 id="detailhead">E-Challan Payment</h1>
+
+    <p id="details">Enter your Full Name and Amount you wish to donate, in order to generate a challan and it may be submitted to your local Bank</p>
+
     <form action="{% url 'donate:challan' %}" class="ws-validate" method="POST">
     {% csrf_token %}                       
-        <div class="form-row">
-            {{ form.name }}
+        <div id="detailp" class="form-row">
+            Donor Name: {{ form.name }}
         </div>
-        <div class="form-row">
-            {{ form.amount }}</div>
+        <div id="detailp" class="form-row">
+            Donation Amount: {{ form.amount }}</div>
         <br>
         <div class="form-row">
             <input class="btn btn-primary" type="submit" />
