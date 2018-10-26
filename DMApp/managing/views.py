@@ -7,11 +7,16 @@ from . import forms
 # Create your views here.
 
 def victim_list(request):
-    victims = Victim.objects.all().order_by('date')
-    return render(request, 'managing/victim_list.html', {'victims':victims})
+    if request.method=="POST":
+        nm = request.POST.get('name')
+        victims = Victim.objects.filter(name=nm).order_by('name')
+        return render(request, 'managing/victim_list.html', {'victims':victims})
+    else:
+        victims = Victim.objects.all().order_by('name')
+        return render(request, 'managing/victim_list.html', {'victims':victims})
 
 def app_victimlist(request):
-    strng = ','.join([str(i) for i in Victim.objects.all().order_by('date').defer('thumb','date')])
+    strng = ','.join([str(i) for i in Victim.objects.all().order_by('name').defer('thumb','date')])
     return HttpResponse('[' + strng + ']')
 
 @login_required(login_url="/accounts/login/")

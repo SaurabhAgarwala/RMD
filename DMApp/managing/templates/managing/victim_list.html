@@ -1,7 +1,20 @@
 {% extends 'base_temp.html' %}
 
 {% block one %}
-    <h1>The following is the list of all the victims:</h1>
+	<form action="{% url 'managing:list' %}" class="ws-validate" method="POST">
+		{% csrf_token %}                       
+	<div class="form-row">
+		<p style="display:inline-block">Enter the name of the person who you want to search for:</p>
+		<input type="text" class="hide-replaced" name="name"/>
+	</div>
+	<br>
+	<div class="form-row">
+		<input class="btn btn-primary" type="submit" />
+	</div>
+	</form>
+	<br>
+	{% if victims %}
+	<h1>The following is the list of all the victims:</h1>
     <div class="victims">
 		{% for victim in victims %}
 			<img src="{{ victim.thumb.url }}">
@@ -14,5 +27,8 @@
             <p>Entry Made On: {{ victim.date }}</p>
             
         {% endfor %}
-    </div>
+	</div>
+	{% else %}
+	<h3>Sorry no entered parameters doesn't match any of the entries.</h3>
+	{% endif %}
 {% endblock %}
