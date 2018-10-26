@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/person_rl_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person_tv_name">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/person_civ_profile_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginLeft="@dimen/margin_normal"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="0.1dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_large"
+        android:layout_marginLeft="@dimen/padding_large"
+        android:paddingTop="@dimen/padding_normal"
+        android:text="Patient"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        android:fontFamily="@font/lato"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/person_cl_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/person_rl_image"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person_tv_name">
+
+        <GridLayout
+            android:id="@+id/person_gl_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_extra_large"
+            android:layout_marginLeft="@dimen/padding_extra_large"
+            android:columnCount="2"
+            android:padding="@dimen/padding_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:padding="@dimen/padding_small"
+                android:text="Age "
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackBold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/person_tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="3"
+                android:padding="@dimen/padding_small"
+                android:text="-"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:padding="@dimen/padding_small"
+                android:text="Gender "
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackBold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/person_tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="5"
+                android:padding="@dimen/padding_small"
+                android:text="-"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:padding="@dimen/padding_small"
+                android:text="Status "
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackBold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/person_tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="3"
+                android:padding="@dimen/padding_small"
+                android:text="-"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:padding="@dimen/padding_small"
+                android:text="Admitter "
+                android:fontFamily="@font/lato"
+                android:textColor="@color/blackBold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/person_tv_admitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="3"
+                android:padding="@dimen/padding_small"
+                android:text="-"
+                android:textColor="@color/black" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/person_tv_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawablePadding="@dimen/padding_small"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:padding="@dimen/padding_small"
+            android:text="-"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/person_gl_info" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider.Horizontal"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

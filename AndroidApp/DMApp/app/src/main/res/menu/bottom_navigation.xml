@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/ic_maps"
+        android:title="@string/map" />
+    <item
+        android:id="@+id/help_manual"
+        android:icon="@drawable/ic_help_manual"
+        android:title="Help " />
+    <item
+        android:id="@+id/helpline"
+        android:icon="@drawable/ic_contact"
+        android:title="@string/helplines" />
+    <item
+        android:id="@+id/casualty"
+        android:icon="@drawable/ic_casualty"
+        android:title="@string/casualties" />
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about" />
+
+</menu>
