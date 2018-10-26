@@ -1,5 +1,85 @@
 {% extends 'base_temp.html' %}
 
 {% block one %}
-    <h1 id="detailhead">Help Manual</h1>
+<center>    
+<h1 id="detailhead">Help Manuals</h1>
+</center>
+
+<div id="detailp" id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Earthquake
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <img src="http://infographicimages.com/infographics/earthquake-tips.jpg" alt="EARTHQUAKE">
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Flood Safety Guide
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                    <img src="https://i.pinimg.com/564x/bd/04/53/bd0453af166e0bc99fca14355d35321b.jpg" alt="FLOOD">
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Tips on CPR
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                    <img src="https://i.pinimg.com/564x/b1/0f/44/b10f44ae38e091a68f875b5a437a6492.jpg" alt="CPR">
+                                </div>
+          </div>
+          <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Hypothermia Tips
+                    </button>
+                  </h5>
+                </div>
+            
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                      <img src="https://i.pinimg.com/564x/c5/fd/44/c5fd44054bb271e7175bfb7d623a2fce.jpg" alt="HYPOTHERMIA">
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
+                      Tornado
+                    </button>
+                  </h5>
+                </div>
+            
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div class="card-body">
+                      <img src="https://i.pinimg.com/564x/e9/5b/e0/e95be086b73fd11638332d7852bd1ed2.jpg" alt="TORNADO">
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
 {% endblock %}
