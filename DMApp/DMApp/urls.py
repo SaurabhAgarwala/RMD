@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^managing/', include('managing.urls')),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^donate/', include('donate.urls')),
+    url(r'^$', include('donate.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

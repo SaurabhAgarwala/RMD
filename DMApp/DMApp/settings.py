@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'donate.apps.DonateConfig',
     'accounts.apps.AccountsConfig',
     'managing.apps.ManagingConfig',
     'django.contrib.admin',
