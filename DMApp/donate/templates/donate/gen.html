@@ -53,7 +53,6 @@
     <div class="card">
         <div class="card-header">
             <h1>E-Challan Payment</h1>
-            <h3>Date of Payment : {{ context.date }}</h3>
             <h3>Reciever : RMD Foundation for Disaster Relief</h3>
             <h3>Bank Name: RMD DUMMY BANK</h3>
             <h3>Account No of Reciever: $$DUMMYNUMBER$$</h3>
@@ -73,7 +72,7 @@
             <tbody>
                 <tr>
                     <td>{{ context.name }}</td>
-                    <td>&pound;{{ context.amount }}</td>
+                    <td>Rs. {{ context.amount }}</td>
                 </tr>
             </tbody>
         </table>
