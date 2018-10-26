@@ -1,0 +1,15 @@
+{% extends 'base_temp.html' %}
+
+{% block one %}
+    <h1 id="detailhead">Donation Page</h1>
+
+    <hr>
+
+    <a id="detailp" href="{% url 'donate:challan' %}">Generate E-Challan Payment</a>
+    <br><br>
+    <a href="https://media.ifrc.org/ifrc/donate/" id="detailp">Donate for other Causes at RedCrescent</a><br><br>
+    <a href="https://www.redcross.org/donate/donation.html/" id="detailp">Donate for other Causes at RedCrescent</a>
+
+    
+
+{% endblock %}

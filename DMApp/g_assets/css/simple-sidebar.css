@@ -1,0 +1,327 @@
+ @font-face {
+  font-family: 'bnr'; 
+  src: url('../Fonts/BebasNeue-Regular.ttf'); 
+}
+@font-face {
+  font-family: 'apply'; 
+  src: url('../Fonts/KeepCalm-Medium.ttf'); 
+}
+@font-face {
+  font-family: 'geo'; 
+  src: url('../Fonts/GeosansLight.ttf'); 
+}
+
+@font-face {
+  font-family: 'detail'; 
+  src: url('../Fonts/eagle-normal.ttf'); 
+}
+
+
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(255, 255, 255)
+}
+
+#page-content-wrapper{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  min-height: 100vh;
+  position: static;
+}
+
+
+#mainhead{
+  width: 100%;
+  height: 12vw;
+  background-color: rgb(0, 183, 255);
+  font-family: 'bnr';
+  text-align: center;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+}
+
+#detailhead{
+  font-family: 'bnr';
+  letter-spacing: 0.20vh;
+  font-size: 5.5vw;
+  color: #000000;
+}
+#detailhead:hover{
+  font-family: 'bnr';
+  letter-spacing: 0.20vh;
+  font-size: 5.5vw;
+  color: #0d1b31;
+}
+
+#detailp{
+  color: darkslateblue;
+  font-size: 155%;
+  font-family: 'detail';
+}
+
+
+
+#detailp:hover{
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}
+#detailpm{
+  color: darkblue;
+  font-size: 2.7vh;
+  font-family: 'detail';
+}
+
+#detailpm:hover{
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+.col-lg-2{
+  height:5vh;
+}
+
+
+#details{
+  color: rgb(209, 209, 209);
+  display: block;
+}
+
+#details:hover{
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+#listd{
+  font-family: 'detail';
+  font-size: 150%;
+  color: rgb(231, 231, 231);
+  text-align: left;
+}
+
+#listd:hover{
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+
+#gi{
+  background-image: url(../images/achievement-agreement-arms-1068523.jpg);
+  height: 40vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:85vw;
+  transition: all 1s ease-in-out;
+  display: block;
+  
+}
+
+
+#gi:hover{
+  background-image: url(../images/achievement-agreement-arms-10685231.jpg);
+  transition: all 1s ease-in-out;
+}
+
+#appear{
+  opacity: 0;
+  align-self: center;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 1s ease-in-out;
+}
+
+#gi:hover #appear{
+  opacity:1;
+  transition: all 1s ease-in-out;
+  align-self: center;
+}
+
+#gitext{
+  font-family: 'geo';
+  letter-spacing: 0.15vw;
+  font-size: 7vw;
+  color: #fff;
+}
+
+#headingtext{
+  color: #292929;
+  text-decoration: none;
+  font-family: 'bnr';
+  letter-spacing: 0.15vw;
+  font-size: 7.5vw;
+}
+
+#headingtext:hover{
+  color: #000000;
+  text-decoration: none;
+  font-family: 'bnr';
+  letter-spacing: 0.15vw;
+  font-size: 7.5vw;
+  transition: all 0.4s ease-in-out;
+}
+
+#headingtextclub{
+  font-family: 'bnr';
+  letter-spacing: 0.15vw;
+  font-size: 8.25vw;
+  color: #ffffff;
+}
+
+#headingtextclub:hover{
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+#menu-toggle{
+  font-size: 150%;
+  background-color: rgb(204, 0, 0);
+  border-style: solid;
+  font-family: 'apply';
+  letter-spacing: 0.25vh;
+}
+#menu-toggle:hover{
+  font-size: 151%;
+  background-color: rgb(255, 255, 255);
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 40vw;
+}
+
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+#cred{
+  color: rgb(209, 209, 209);
+  display: block;
+  font-family: 'detail';
+  letter-spacing: 0.11vw;
+}
+
+#cred:hover{
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Sidebar Styles */
+
+#sidetitle {
+  font-size: 125%; 
+}
+
+#posd{
+  bottom: 3px;
+  position: absolute;
+}
+
+#sidetitleend{
+  font-size: 70%;
+  text-align: center;
+
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+  font-size: 110%;
+  font-weight: 110;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgb(207, 32, 32);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 0;
+  }
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
+  #sidebar-wrapper {
+    width: 0;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
