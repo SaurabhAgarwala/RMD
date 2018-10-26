@@ -1,35 +1,92 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
     <head>
-        <meta-charset="utf-18">
-        <title>Victim List</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>RMD | Reasonably Managaed Disaster</title>
+
+        <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+
+            <!-- Bootstrap core CSS -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+            <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
     </head>
+
     <body>
-        <header>
-            <h1><a href="{% url 'managing:list' %}">#..LOGO..#</a></h1>
-            <div class="nav">
+        <div id="wrapper">
+        <div id="page-content-wrapper">
+            <header>
+            <div id="mainhead">
+            <h1><a id="headingtext" href="{% url 'donate:home' %}">REASONABLY MANAGED DISASTER</a></h1>
+            </div><hr>
+            <center>
+                <div class="row" style="align-self:center; width: 100vw">
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'donate:home' %}">Home</a></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'managing:list' %}">Casualties</a></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'donate:donate' %}">Donate</a></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'donate:man' %}">Help Manuals</a></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'donate:help' %}">Emergency No.s</a></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"><a id="detailpm" href="{% url 'donate:about' %}">About Us</a></div>
+                </div>
+            </center>
+            <hr>
+            <div class="nav" style="box-align:center">
                 {% if user.is_authenticated %}
                 <ul>
                     <li>
                         <form class="logout-view" action="{% url 'accounts:logout' %}" method="POST">
                             {% csrf_token %}
-                            <input type="submit" value="Log Out">
+                            <input id="detailp" type="submit" value="Log Out">
                         </form>
-                    </li>
-                    <a href="{% url 'managing:enter' %}">Enter New Victim Details</a>
+                    </li><br>
+                    <a id="detailp" href="{% url 'managing:enter' %}">Enter New Victim Details</a>
                 </ul>
-                {% else %}
-                <a href="{% url 'accounts:login' %}">LogIn</a><br>
-                <a href="{% url 'accounts:signup' %}">SignUp</a><em>(If you are a member of a hospital/relief camp helping in managing this disaster)</em>
+                {% else %}<center>
+                <div class="row" style="align-self:center; width: 100vw">
+                <div class="col-xs-6 col-sm-6 col-lg-6" style="align-self:center"><a id="detailpm" href="{% url 'accounts:login' %}">Log In</a></div>
+                <div class="col-xs-6 col-sm-6 col-lg-6" style="align-self:center"><a id="detailpm" href="{% url 'accounts:signup' %}">Sign Up</a><br><em style="color:rgb(0, 0, 0)">(For Hospitals / Relief Camps)</em></div>
+            </div></center>
                 {% endif %}
             </div>
-        </header>        
-        <div class="wrap">
+            <hr><center>
+            <a href="" id="detailp">Download the App Today!</a>
+        </center>
+            </header>        
+            <div class="wrap" style="background-color:rgb(255, 255, 255); color:black">
             {% block one %}
             {% endblock %}
+            </div>
+
         </div>
+        </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
     </body>
 </html>
