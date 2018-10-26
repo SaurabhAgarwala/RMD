@@ -3,6 +3,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from . import forms
 
+from django.views.generic import View
+from django.utils import timezone
+from .models import *
+from .render import Render
 
 # Create your views here.
 
@@ -26,7 +30,7 @@ def challan(request):
             'amount':amt,
             'date':dt
         }
-        #return render(request, 'donate/challan.html', {'context':context})
+        return Render.render('donate/gen.html',{'context':context})
     else:
         form = forms.DonorForm
         return render(request, 'donate/challan.html', {'form':form})
