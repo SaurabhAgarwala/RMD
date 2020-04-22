@@ -9,7 +9,9 @@ urlpatterns = [
     url(r'^managing/', include('managing.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^donate/', include('donate.urls')),
-    url(r'^$', include('donate.urls')),
+    url(r'^api/managing/', include('managing.api.urls')),
+    url(r'^api/accounts/', include('accounts.api.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

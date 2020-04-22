@@ -19,7 +19,7 @@ class Victim(models.Model):
     name = models.CharField(max_length=50, blank=True)
     age = models.PositiveIntegerField(default=21, blank=True)
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default='Male', blank=True)
-    status = models.CharField(max_length=10, choices=STATUS, default='Recovering')
+    status = models.CharField(max_length=10, choices=STATUS)
     date = models.DateTimeField(auto_now_add=True)
     thumb = models.ImageField(default='default.jpg')
     hospital_address = models.TextField(default='Add Hospital/Relief Camp Address', blank=False)

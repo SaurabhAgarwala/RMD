@@ -14,7 +14,7 @@ jobs:
     - name: Run PWD command
       run: |
         pwd
-        ls
+        find .
         cd $GITHUB_WORKSPACE
         pwd
-        ls
+        find .
