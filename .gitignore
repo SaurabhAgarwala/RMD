@@ -4,7 +4,8 @@ YouTubeVideoLinks.docx
 AndroidApp/DMApp/build.gradle
 DMApp/donate/migrations/*
 DMApp/db.sqlite3
-DMApp/accounts/__pycache__/*
-DMApp/donate/__pycache__/*
-DMApp/managing/migrations/*
-DMApp/managing/api/__pycache__/*
+DMApp/media/*
+DMApp/*/migrations/
+DMApp/*/__pycache__/
+DMApp/*/*/__pycache__/
+*.pyc
